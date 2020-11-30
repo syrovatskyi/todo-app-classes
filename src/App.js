@@ -52,9 +52,20 @@ class App extends Component {
       items: filteredItems
     })
   }
+
+  setUpdate = (text, key) => {
+    const items = this.state.items
+    items.map(item => {
+      if(item.key === key){
+        item.text = text
+      }
+    })
+    this.setState({
+      items: items
+    })
+
+  }
   render() {
-
-
     return (
       <div className="App">
         <header>
@@ -73,6 +84,7 @@ class App extends Component {
         <ListItems 
           items={this.state.items}
           deleteItem={this.deleteItem}
+          setUpdate={this.setUpdate}
         >
         </ListItems>
       </div>

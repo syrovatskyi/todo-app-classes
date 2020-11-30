@@ -39,7 +39,9 @@ body {
   cursor: pointer;
   color: #fff;
 }
-
+#to-do-form button:focus{
+  outline: none;
+}
 .list {
   color:#fff;
   width: 300px;

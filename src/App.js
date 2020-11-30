@@ -43,6 +43,15 @@ class App extends Component {
       })
     }
   }
+
+  deleteItem =(key) => {
+    const filteredItems = this.state.items.filter(item => {
+      return item.key !== key
+    })
+    this.setState({
+      items: filteredItems
+    })
+  }
   render() {
 
 
@@ -61,7 +70,11 @@ class App extends Component {
           </form>
         </header>
 
-        <ListItems items={this.state.items}></ListItems>
+        <ListItems 
+          items={this.state.items}
+          deleteItem={this.deleteItem}
+        >
+        </ListItems>
       </div>
 
     )
